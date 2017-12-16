@@ -1,14 +1,12 @@
 angular.module('video-player')
 .component('search', {
   bindings: {
-    searchResults: '<',
-    setSearchResults: '<'
+    result: '<'
   },
   controller: function(youTube) {
     this.service = youTube;
-    this.result = (videos) => {
-      this.setSearchResults(videos);
-      // youTube.search(this.result, this.query);
+    this.search = (query) => {
+      this.service.search(this.result, query);
     };
   },
   
