@@ -1,5 +1,12 @@
 <div class="search-bar form-inline">
-  <input class="form-control" type="text" ng-model="$ctrl.queryInput"/>
+  <input class="form-control" type="text" 
+  ng-keydown="$ctrl.handleEnter($event.keyCode, $ctrl.queryInput)" 
+  ng-model="$ctrl.queryInput"
+  ng-keyup="$ctrl.liveSearch($ctrl.queryInput)"
+  ng-model-options="{ allowInvalid: true, debounce: 500 }"
+  ng-change="$ctrl.liveSearch($ctrl.queryInput)"
+  />
+  
   <button 
     class="btn"
     ng-click="$ctrl.search($ctrl.queryInput)">
