@@ -13,7 +13,7 @@ angular.module('video-player')
         videoEmbeddable: 'true' 
       }
     }).then(function(response) {
-      console.log(response);
+      console.log('youtube triggered')
       callback(response.data.items);
     }, function() {
       console.log('GOOOFED');
