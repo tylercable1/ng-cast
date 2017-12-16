@@ -5,7 +5,7 @@ angular.module('video-player')
   
   controller: function(youTube) {
     this.videos = window.exampleVideoData;
-    this.video = this.videos[0];
+    this.currentVideo = this.videos[0];
     
     this.selectVideo = (index) => {
       this.video = this.videos[index];
